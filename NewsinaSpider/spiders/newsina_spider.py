@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import scrapy
+
 from scrapy import Request
 from ..items import *
 import random
@@ -62,7 +62,7 @@ class NewsinaSpiderSpider(scrapy.Spider):
         content = re.sub(r'[ \xa0?]+', ' ', content)
         content = re.sub(r'\s*\n\s*', '\n', content)
         content = re.sub(r'\s*(\s)', r'\1', content)
-        content = content.strip()
+        content = ''.join([x.strip() for x in content])
 
         # content_list = response.xpath('//*[@id="artibody" or @id="article"]//p/text()').extract()
         # content = r""

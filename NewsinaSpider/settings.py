@@ -66,9 +66,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'NewsinaSpider.pipelines.NewsinaspiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'NewsinaSpider.pipelines.MongoPipeline': 302,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,3 +90,7 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+LOCAL_MONGO_HOST = '127.0.0.1'
+LOCAL_MONGO_PORT = 27017
+DB_NAME = 'Newsina'
